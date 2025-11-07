@@ -1,0 +1,86 @@
+#include <iostream> 
+using namespace std; 
+
+int main() {
+    setlocale(LC_ALL, "ru");
+
+    int menu;
+    int settings;
+    int rule;
+    int exit;
+    string name;
+    int quesion = 8;
+
+
+    cout << "Привет это игра Викторина" << endl;
+    cout << "Введи свое имя!" << endl;
+
+    cin >> name;
+
+    while (true) {
+        system("cls");
+        cout << "[Меню]" << endl;
+        cout << "Игрок: " << name << endl;
+        cout << "[1]Начать игру" << endl;
+        cout << "[2]Настройки" << endl;
+        cout << "[3]Правила" << endl;
+        cout << "[4]Выйти" << endl;
+        cout << "Введи число: ";
+        cin >> menu;
+
+        if (menu == 1) {
+            system("cls");
+            cout << "Начинаем игру!" << endl;
+        }
+        else if (menu == 2) {
+            system("cls");
+            cout << "Вот настройки игры:" << endl;
+            cout << "[1]Редактирование имя игрока" << endl;
+            cout << "[2]Редактирование вопросов в игре. Можно изменить на 8-10-12" << endl;
+            cin >> settings;
+            switch (settings) {
+            case 1:
+                cout << "Можете изменить имя:";
+                cin >> name;
+                break;
+
+            case 2: 
+                cout << "Введите кол-во вопросов: ";
+                cin >> quesion;
+
+                if (quesion < 8 || quesion > 12) {
+                    cout << "Можно ввести вопросы в диапазоне от 8 до 12";
+                }
+                break;
+            }
+        }
+        else if (menu == 3) {
+            system("cls");
+            cout << "- Вот правила игры:" << endl;
+            cout << "- Игрок получает очки за правильный ответ на вопрос" << endl;
+            cout << "- Игрок проходит дальше за правильный ответ" << endl;
+            cout << "- Игрок теряет жизнь при неправильном ответе" << endl;
+            cout << "[1]Выход в меню" << endl;
+            cin >> rule;
+            switch (rule) {
+            case 1:
+                break;
+            }
+        }
+        else if (menu == 4) {
+            system("cls");
+            cout << "Производим выход" << endl;
+            return 0;
+        }
+        else {
+            system("cls");
+            cout << "Нет такой команды" << endl;
+            return 0;
+        }
+        
+    }
+
+
+
+    return 0;
+ }
